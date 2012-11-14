@@ -60,7 +60,7 @@
 <div id='map'></div>
 <script>
 
-    mapbox.load(['bwyss.TEST', 'gfdrr-labs.water-world'], function(data) {
+    mapbox.load(['bwyss.TEST', 'gfdrr-labs.map-kni9jms2'], function(data) {
       var map = mapbox.map('map');
       map.ui.zoomer.add();
 
@@ -68,9 +68,9 @@
       map.addLayer(data[0].layer);
       map.zoom(6).center(data[0].center);
 
-
-      map.interactivity.auto();
-
+      var interaction = mapbox.interaction()
+        .map(map)
+        .auto();
 
       // Attribute map
       map.ui.attribution.add()

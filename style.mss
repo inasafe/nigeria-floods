@@ -10,7 +10,7 @@
 Map {
 }
 
-@land: url('/Users/bmwyss/Downloads/img-thing10.jpg');
+@land: url('images/img-thing10.jpg');
 
 #impact_flood {
   [Status='Flooded']
