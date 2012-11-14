@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
+  <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.css' rel='stylesheet' />
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+
+  <style>
+    body { margin:0; padding:0; font-family: "Ubuntu"; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+    #currency {
+     z-index:9999;
+     position:absolute;
+     bottom:10px;
+     right:10px;
+     font-size:36px;
+     font-weight:bold;
+   }
+     #map-ui {
+    position:absolute;
+    top:10px;left:10px;
+    list-style:none;
+    margin:0;padding:0;
+    z-index:100;
+    }
+    #map-ui a {
+      font:normal 13px/18px 'Helvetica Neue',Helvetica,sans-serif;
+      background:#FFF;
+      color:#3C4E5A;
+      display:block;
+      margin:0;padding:0;
+      border:1px solid #BBB;
+      border-bottom-width:0;
+      min-width:138px;
+      padding:10px;
+      text-decoration:none;
+      }
+    #map-ui a:hover { background:#ECF5FA; }
+    #map-ui li:last-child a {
+      border-bottom-width:1px;
+      -webkit-border-radius:0 0 3px 3px;
+              border-radius:0 0 3px 3px;
+      }
+    #map-ui li:first-child a {
+      -webkit-border-radius:3px 3px 0 0;
+              border-radius:3px 3px 0 0;
+            }
+    #map-ui a.active {
+      background:#3887BE;
+      border-color:#3887BE;
+      border-top-color:#FFF;
+      color:#FFF;
+      }
+  </style>
+</head>
+<body>
+<ul id='map-ui'></ul>
+<div id='currency'>Nigeria Floods, Nov 2012</div>
+<div id='map'></div>
+<script>
+
+    mapbox.load(['bwyss.TEST', 'gfdrr-labs.water-world'], function(data) {
+      var map = mapbox.map('map');
+      map.ui.zoomer.add();
+
+      map.addLayer(data[1].layer);
+      map.addLayer(data[0].layer);
+      map.zoom(6).center(data[0].center);
+
+
+      map.interactivity.auto();
+
+
+      // Attribute map
+      map.ui.attribution.add()
+            .content('<a href="http://mapbox.com/about/maps">Inasafe Sprint @ Pavia</a>');
+      });
+</script>
+</body>
+</html>
