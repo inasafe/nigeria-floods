@@ -59,8 +59,8 @@
   ],
   "scale": 1,
   "metatile": 2,
-  "_basemap": "http://a.tiles.mapbox.com/v3/mapbox.mapbox-streets.jsonp",
-  "name": "NGA_flood",
+  "_basemap": "http://a.tiles.mapbox.com/v3/gfdrr-labs.map-kni9jms2.jsonp",
+  "name": "Nigeria Floods",
   "description": "test",
   "attribution": "bob",
   "legend": "<div class='my-legend'>\n  <div class='legend-title'>Impact<br/>per Admin 2<sup>2</sup></div>\n  <div class='legend-scale'>\n    <ul class='legend-labels'>\n      <li><span style='background:#FFFFFF;'></span>None</li>\n      <li><span style='background:#FFFFB2;'></span>1 - 2242</li>\n      <li><span style='background:#FECC5C;'></span>5 - 9276</li>\n      <li><span style='background:#FD8D3C;'></span>10 - 22226</li>\n      <li><span style='background:#F03B20;'></span>50 - 78573</li>\n      <li><span style='background:#BD0026;'></span>100 - 159002</li>\n    </ul>\n  </div>\n</div>"

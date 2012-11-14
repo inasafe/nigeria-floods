@@ -8,35 +8,16 @@
 @shade7: #52514C;
 
 Map {
-  //background-color: #b8dee6;
 }
-/*
-#world {
- 
-  polygon-fill: #fff;
-  opacity:.85;
-  [GMI_CNTRY = 'NGA']{}
-}
-*/
-/*
-#flood {
-  ::outline {
-    line-color: #fff;
-    line-width: 2;
-    line-join: round;
-    opacity:.4;
-  }
-  [Status = 'Flooded']{polygon-fill:#0C1EA9}
-  //polygon-fill: none;
-  opacity:.7
-}
-*/
+
 #impact {
-  line-color: @shade7;
+  opacity:0.7;
+  line-color: white;
   line-width: 2;
+  line-opacity: 0;
   polygon-fill: @shade0;
   polygon-opacity:10;
-  [impact =  0]      { polygon-fill: @shade1; }
+  [impact =  0]      { polygon-fill: @shade1; polygon-opacity:0; line-color:white;}
   [impact >= 1][impact < 2242]      { polygon-fill: @shade2; }
   [impact >= 2242][impact < 9276]     { polygon-fill: @shade3; }
   [impact >= 9276][impact < 22226]    { polygon-fill: @shade4; }
@@ -48,14 +29,12 @@ Map {
 }
 
 #countries[ADMIN!='Nigeria'] {
-	polygon-fill:white;
-    opacity: 0.85;
+	polygon-fill:black;
+    opacity: 0.5;
 }
 #countries[ADMIN='Nigeria'] {
-  ::glow {
-    polygon-fill:gray;
-    image-filters:agg-stack-blur(20,20);
-  }
+  line-color: gray;
+  line-width: 2;
   ::shape {
     opacity: 0;
   }
