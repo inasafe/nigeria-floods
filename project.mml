@@ -63,5 +63,5 @@
   "name": "Nigeria Floods",
   "description": "test",
   "attribution": "bob",
-  "legend": "<div class='my-legend'>\n  <div class='legend-title'>Impact<br/>per Admin 2<sup>2</sup></div>\n  <div class='legend-scale'>\n    <ul class='legend-labels'>\n      <li><span style='background:#FFFFFF;'></span>None</li>\n      <li><span style='background:#FFFFB2;'></span>1 - 2242</li>\n      <li><span style='background:#FECC5C;'></span>5 - 9276</li>\n      <li><span style='background:#FD8D3C;'></span>10 - 22226</li>\n      <li><span style='background:#F03B20;'></span>50 - 78573</li>\n      <li><span style='background:#BD0026;'></span>100 - 159002</li>\n    </ul>\n  </div>\n</div>"
+  "legend": "<div class='my-legend'>\n  <div class='legend-title'>Flood Impact in Nigeria<br/></div>\n  <div class='legend-scale'>\n    <ul class='legend-labels'>\n      <li><span style='background:#FFFFFF;'>____ </span> None</li>\n      <li><span style='background:#FFFFB2;'>____ </span> 1 - 2242</li>\n      <li><span style='background:#FECC5C;'>____ </span> 5 - 9276</li>\n      <li><span style='background:#FD8D3C;'>____ </span> 10 - 22226</li>\n      <li><span style='background:#F03B20;'>____ </span> 50 - 78573</li>\n      <li><span style='background:#BD0026;'>____ </span> 100 - 159002</li>\n    </ul>\n  </div>\n</div>"
 }
