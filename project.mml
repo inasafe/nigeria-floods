@@ -1,0 +1,67 @@
+{
+  "bounds": [
+    1.4282,
+    2.8114,
+    16.4136,
+    15.3689
+  ],
+  "center": [
+    7.8223,
+    9.4924,
+    5
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "impact",
+    "template_teaser": "Number of People Impacted: {{{impact}}}",
+    "fields": [
+      "impact"
+    ]
+  },
+  "minzoom": 4,
+  "maxzoom": 11,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        2.6684309999999414,
+        4.270418000000063,
+        14.680070000000114,
+        13.892010000000084
+      ],
+      "id": "impact",
+      "class": "",
+      "Datasource": {
+        "file": "data/NGA_adm_flood_with_impact.shp",
+        "id": "impact",
+        "project": "TEST",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "impact"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "_basemap": "http://a.tiles.mapbox.com/v3/mapbox.mapbox-streets.jsonp",
+  "name": "NGA_flood",
+  "description": "test",
+  "attribution": "bob",
+  "legend": "<div class='my-legend'>\n  <div class='legend-title'>Impact<br/>per Admin 2<sup>2</sup></div>\n  <div class='legend-scale'>\n    <ul class='legend-labels'>\n      <li><span style='background:#FFFFFF;'></span>None</li>\n      <li><span style='background:#FFFFB2;'></span>1 - 2242</li>\n      <li><span style='background:#FECC5C;'></span>5 - 9276</li>\n      <li><span style='background:#FD8D3C;'></span>10 - 22226</li>\n      <li><span style='background:#F03B20;'></span>50 - 78573</li>\n      <li><span style='background:#BD0026;'></span>100 - 159002</li>\n    </ul>\n  </div>\n</div>"
+}
