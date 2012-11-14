@@ -55,6 +55,27 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "impact"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        2.6684309999999414,
+        4.270418000000063,
+        14.680070000000114,
+        13.892010000000084
+      ],
+      "id": "impact_flood",
+      "class": "",
+      "Datasource": {
+        "file": "data/NGA_adm_flood_with_impact.shp",
+        "id": "impact_flood",
+        "project": "nigeria-floods",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "impact_flood"
     }
   ],
   "scale": 1,

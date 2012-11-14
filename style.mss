@@ -10,6 +10,16 @@
 Map {
 }
 
+@land: url('/Users/bmwyss/Downloads/img-thing10.jpg');
+
+#impact_flood {
+  [Status='Flooded']
+    {
+    polygon-pattern-file: @land; 
+    opacity:.1;
+  	}
+}
+
 #impact  {
   line-color: white;
   line-width: 2;
