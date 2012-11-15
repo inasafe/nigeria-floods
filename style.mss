@@ -12,7 +12,7 @@ Map {
 
 @land: url('images/img-thing10.jpg');
 
-#impact_flood {
+#impact_flood [zoom<11]{
   [Status='Flooded']
     {
     polygon-pattern-file: @land; 
@@ -20,10 +20,10 @@ Map {
   	}
 }
 
-#impact  {
+#impact [zoom<11] {
   line-color: white;
   line-width: 2;
-  line-opacity: 0;
+  line-opacity: 0.2;
   polygon-fill: @shade0;
   polygon-opacity: 0.43;
   [impact =  0]      { polygon-fill: @shade1; polygon-opacity:0; line-color:white;}
@@ -36,9 +36,6 @@ Map {
 
 }
 
-#impact[Status = 'Flooded']{
-  polygon-fill: #0C1EA9;
-}
 
 
 #countries[ADMIN!='Nigeria'] {
