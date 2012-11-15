@@ -46,7 +46,7 @@
       "id": "impact",
       "class": "",
       "Datasource": {
-        "file": "data/NGA_adm_flood_with_impact.shp",
+        "file": "data/NGA_adm_flood.shp",
         "id": "impact",
         "project": "TEST",
         "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
@@ -67,7 +67,7 @@
       "id": "impact_flood",
       "class": "",
       "Datasource": {
-        "file": "data/NGA_adm_flood_with_impact.shp",
+        "file": "data/NGA_adm_flood.shp",
         "id": "impact_flood",
         "project": "nigeria-floods",
         "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
