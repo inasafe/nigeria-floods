@@ -13,7 +13,7 @@
   "format": "png",
   "interactivity": {
     "layer": "impact",
-    "template_teaser": "Number of People Impacted: {{{impact}}}\n<br>\nDistrict Population (2001): {{{POP_2001}}}\n<br>\nIs Foolded: {{{Status}}}",
+    "template_teaser": "Number of People Impacted: {{{impact}}}\n<br>\nDistrict Population (2001): {{{POP_2001}}}\n<br>\nStatus: {{{Status}}}",
     "fields": [
       "impact",
       "POP_2001",
