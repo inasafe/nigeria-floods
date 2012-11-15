@@ -15,7 +15,9 @@
     "layer": "impact",
     "template_teaser": "Number of People Impacted: {{{impact}}}\n<br>\nDistrict Population (2001): {{{POP_2001}}}\n<br>\nIs Foolded: {{{Status}}}",
     "fields": [
-      "impact"
+      "impact",
+      "POP_2001",
+      "Status"
     ]
   },
   "minzoom": 4,
