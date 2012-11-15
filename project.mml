@@ -13,7 +13,7 @@
   "format": "png",
   "interactivity": {
     "layer": "impact",
-    "template_teaser": "Number of People Impacted: {{{impact}}}",
+    "template_teaser": "Number of People Impacted: {{{impact}}}\n<br>\nDistrict Population (2001): {{{POP_2001}}}\n<br>\nIs Foolded: {{{Status}}}",
     "fields": [
       "impact"
     ]
@@ -48,7 +48,7 @@
       "Datasource": {
         "file": "data/NGA_adm_flood.shp",
         "id": "impact",
-        "project": "TEST",
+        "project": "nigeria-floods",
         "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
       },
       "srs-name": "WGS84",

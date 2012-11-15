@@ -27,7 +27,7 @@ Map {
   polygon-fill: @shade0;
   polygon-opacity: 0.43;
   [impact =  0]      { polygon-fill: @shade1; polygon-opacity:0; line-color:white;}
-  [impact >= 1][impact < 2242]      { polygon-fill: @shade2;  polygon-opacity: 0.15;}
+  [impact >= 1][impact < 2242]      { polygon-fill: @shade2;  polygon-opacity: 0.4;}
   [impact >= 2242][impact < 9276]     { polygon-fill: @shade3; }
   [impact >= 9276][impact < 22226]    { polygon-fill: @shade4; }
   [impact >= 22226][impact < 78573]   { polygon-fill: @shade5; }
