@@ -13,9 +13,11 @@
   "format": "png",
   "interactivity": {
     "layer": "impact",
-    "template_teaser": "Number of People Impacted: {{{impact}}}",
+    "template_teaser": "Number of People Impacted: {{{impact}}}\n<br>\nDistrict Population (2001): {{{POP_2001}}}\n<br>\nIs Foolded: {{{Status}}}",
     "fields": [
-      "impact"
+      "impact",
+      "POP_2001",
+      "Status"
     ]
   },
   "minzoom": 4,
@@ -46,9 +48,9 @@
       "id": "impact",
       "class": "",
       "Datasource": {
-        "file": "data/NGA_adm_flood_with_impact.shp",
+        "file": "data/NGA_adm_flood.shp",
         "id": "impact",
-        "project": "TEST",
+        "project": "nigeria-floods",
         "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
       },
       "srs-name": "WGS84",
@@ -67,7 +69,7 @@
       "id": "impact_flood",
       "class": "",
       "Datasource": {
-        "file": "data/NGA_adm_flood_with_impact.shp",
+        "file": "data/NGA_adm_flood.shp",
         "id": "impact_flood",
         "project": "nigeria-floods",
         "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
@@ -84,5 +86,5 @@
   "name": "Nigeria Floods",
   "description": "test",
   "attribution": "bob",
-  "legend": "<div class='my-legend'>\n  <div class='legend-title'>Flood Impact in Nigeria<br/></div>\n  <div class='legend-scale'>\n    <ul class='legend-labels'>\n      <li><span style='background:#FFFFFF;'>____</span>   None</li>\n      <li><span style='background:#FFFFB2;'>____</span>  1 - 2242</li>\n      <li><span style='background:#FECC5C;'>____</span>  5 - 9276</li>\n      <li><span style='background:#FD8D3C;'>____</span>  10 - 22226</li>\n      <li><span style='background:#F03B20;'>____</span>  50 - 78573</li>\n      <li><span style='background:#BD0026;'>____</span>  100 - 159002</li>\n      <img border=\"0\" src=\"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSBgHwcaoDVyX_Y5imf-vKT6buvrflEDLiGkEyYfft1Fp-eZ-7J\" alt=\"missing\" width=\"28\" height=\"15\">\n    </ul>\n  </div>\n</div>"
+  "legend": ""
 }
