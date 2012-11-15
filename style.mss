@@ -40,10 +40,12 @@ Map {
   polygon-fill: #0C1EA9;
 }
 
+
 #countries[ADMIN!='Nigeria'] {
 	polygon-fill:black;
     opacity: 0.5;
 }
+
 
 #countries[ADMIN='Nigeria'] {
   line-color: white;

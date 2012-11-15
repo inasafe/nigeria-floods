@@ -58,9 +58,25 @@
 <ul id='map-ui'></ul>
 <div id='currency'>Nigeria Floods, Nov 2012</div>
 <div id='map'></div>
+<div class="map-legends">
+    <div class="map-legend">
+        <div class='legend-title'>Flood Impact in Nigeria<br/></div>
+          <div class='legend-scale'>
+            <ul class='legend-labels'>
+              <span style='background:#FFFFFF;'>____</span>   None<br>
+              <span style='background:#FFFFB2;'>____</span>  1 - 2242<br>
+              <span style='background:#FECC5C;'>____</span>  5 - 9276<br>
+              <span style='background:#FD8D3C;'>____</span>  10 - 22226<br>
+              <span style='background:#F03B20;'>____</span>  50 - 78573<br>
+              <span style='background:#BD0026;'>____</span>  100 - 159002<br>
+              <img border="0" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSBgHwcaoDVyX_Y5imf-vKT6buvrflEDLiGkEyYfft1Fp-eZ-7J" alt="missing" width="32" height="15">
+            </ul>
+          </div>
+    </div>
+</div>
 <script>
 
-    mapbox.load(['bwyss.TEST', 'gfdrr-labs.map-kni9jms2'], function(data) {
+    mapbox.load(['bwyss.nigeria-floods', 'gfdrr-labs.map-kni9jms2'], function(data) {
       var map = mapbox.map('map');
       map.ui.zoomer.add();
 
