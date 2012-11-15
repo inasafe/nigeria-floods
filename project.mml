@@ -78,6 +78,24 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "impact_flood"
+    },
+    {
+      "geometry": "raster",
+      "extent": [
+        0,
+        -2.6661136414999973,
+        19.999512,
+        22.666601558500002
+      ],
+      "id": "flood_pretty",
+      "class": "",
+      "Datasource": {
+        "file": "data/flood-pretty.tif"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "flood_pretty"
     }
   ],
   "scale": 1,

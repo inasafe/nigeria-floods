@@ -55,3 +55,6 @@ Map {
     opacity: 0;
   }
 }
+#flood_pretty {
+  raster-opacity:1;
+}
