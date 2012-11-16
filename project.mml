@@ -1,27 +1,29 @@
 {
   "bounds": [
-    1.4282,
-    2.8114,
-    16.4136,
-    15.3689
+    -3.7464,
+    1.3402,
+    22.0056,
+    17.5393
   ],
   "center": [
-    7.8223,
-    9.4924,
-    5
+    8.1079,
+    11.6307,
+    6
   ],
   "format": "png",
   "interactivity": {
     "layer": "impact",
-    "template_teaser": "Number of People Impacted: {{{impact}}}\n<br>\nDistrict Population (2001): {{{POP_2001}}}\n<br>\nStatus: {{{Status}}}",
+    "template_teaser": "<b>{{{NAME_2}}}, {{{STATENAME}}}</b>\n{{#Status}}\n  <span style=\"color: red\">Reported as flooded.</span>\n{{/Status}}\n<br>\nImpacted Population (Modis/AfriPop): {{{impact}}}\n<br>\nTotal Population (Local, 2001): {{{POP_2001}}}\n<br>\n",
     "fields": [
+      "NAME_2",
+      "STATENAME",
+      "Status",
       "impact",
-      "POP_2001",
-      "Status"
+      "POP_2001"
     ]
   },
-  "minzoom": 4,
-  "maxzoom": 11,
+  "minzoom": 6,
+  "maxzoom": 13,
   "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
   "Stylesheet": [
     "style.mss"
@@ -35,7 +37,8 @@
       "Datasource": {
         "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
         "type": "shape"
-      }
+      },
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -56,7 +59,8 @@
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "impact"
+      "name": "impact",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -77,7 +81,8 @@
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "impact_flood"
+      "name": "impact_flood",
+      "status": "off"
     },
     {
       "geometry": "raster",
