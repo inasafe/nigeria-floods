@@ -1,4 +1,4 @@
-{
+grid({
     "bounds": [
         -179.99992505544913,
         -85.05112231458043,
@@ -23,4 +23,4 @@
     "type": "baselayer",
     "version": "3.0.1",
     "webpage": "http://ghslsys.jrc.ec.europa.eu"
-}
+});
