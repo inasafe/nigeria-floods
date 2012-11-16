@@ -18,7 +18,7 @@ grid({
     "scheme": "xyz",
     "tilejson": "2.0.0",
     "tiles": [
-        "http://ghslsys.jrc.ec.europa.eu/iq.php?layer=bu&x={x}&y={y}&z={z}"
+        "http://ghslsys.jrc.ec.europa.eu/iq.php?layer=bu&x={y}&y={x}&z={z}"
     ],
     "type": "baselayer",
     "version": "3.0.1",
