@@ -11,42 +11,17 @@
 <body>
 <style type='text/css'>
     body { margin:0; padding:0; font-family: "Ubuntu"; }
-    #map { position:absolute; top:0; bottom:0; width:100%; }
-    #map-ui {
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+  #map-legend {
+    background:#fff;
     position:absolute;
-    top:10px;left:10px;
-    list-style:none;
-    margin:0;padding:0;
-    z-index:100;
-    }
-    #map-ui a {
-      font:normal 13px/18px 'Helvetica Neue',Helvetica,sans-serif;
-      background:#FFF;
-      color:#3C4E5A;
-      display:block;
-      margin:0;padding:0;
-      border:1px solid #BBB;
-      border-bottom-width:0;
-      min-width:138px;
-      padding:10px;
-      text-decoration:none;
-      }
-    #map-ui a:hover { background:#ECF5FA; }
-    #map-ui li:last-child a {
-      border-bottom-width:1px;
-      -webkit-border-radius:0 0 3px 3px;
-              border-radius:0 0 3px 3px;
-      }
-    #map-ui li:first-child a {
-      -webkit-border-radius:3px 3px 0 0;
-              border-radius:3px 3px 0 0;
-            }
-    #map-ui a.active {
-      background:#3887BE;
-      border-color:#3887BE;
-      border-top-color:#FFF;
-      color:#FFF;
-      }
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:1000;
+    padding:10px;
+    height:30px;
+  }
   #swipe {
     background:#fff;
     position:absolute;
@@ -179,7 +154,7 @@
                 <li><span style='background:#F03B20;'></span>22226 - 78573<li>
                 <li><span style='background:#BD0026;'></span>78573 - 159002<li>
               </ul>
-              <div class='legend-source'> Source: <a href="#link to source">Calculated with MODIS satellite imagery and AfriPop population data </a>
+              <div class='legend-source'> Source: <a href="#link to source">Calculated with MODIS satellite imagery and GRUMP population data </a>
               </div>
             </div>
        <div class='legend-title-part'>Report<br/>
@@ -224,8 +199,9 @@
 
   map.addLayer(mapbox.layer().id(['gfdrr-labs.map-kni9jms2', 'bwyss.nigeria-floods']));
   
-  map.addLayer(mapbox.layer().id('examples.map-20v6611k').composite(false));
+  map.addLayer(mapbox.layer().id('examples.map-4l7djmvo').composite(false));
   map.zoom(6).center({ lat: 7.6219, lon: 6.9743 });
+  map.setZoomRange(6, 13);
   map.ui.attribution.add()
       .content('<a href="http://mapbox.com/about/maps">Terms &amp; Feedback</a>');
 
