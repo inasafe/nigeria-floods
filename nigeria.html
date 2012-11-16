@@ -165,7 +165,7 @@
       .map(map)
       .auto();
 
-  map.addLayer(mapbox.layer().id('bwyss.nigeria-floods', 'gfdrr-labs.map-kni9jms2').composite(false));
+  map.addLayer(mapbox.layer().id(['gfdrr-labs.map-kni9jms2', 'bwyss.nigeria-floods']));
   
   map.addLayer(mapbox.layer().id('examples.map-20v6611k').composite(false));
   map.zoom(6).center({ lat: 7.6219, lon: 6.9743 });
