@@ -37,7 +37,7 @@ Map {
   line-width: 2;
   line-opacity: 0.9;
   polygon-fill: @shade0;
-  polygon-opacity: 0.9;
+  polygon-opacity: 1;
   [impact =  0]      { polygon-fill: @shade1; polygon-opacity:0; line-opacity: 0;}
   [impact >  0][impact < 100]    { polygon-fill: @shade1; polygon-opacity:0; line-opacity: 0;}
   [impact >= 100][impact < 2242]      { polygon-fill: @shade2; }
