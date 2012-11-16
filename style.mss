@@ -17,12 +17,19 @@ Map {
 #impact_flood [zoom<11]{
   [Status='Flooded']
     {
+ 
     polygon-pattern-file: @land; 
+    
     opacity:.3;
       line-color: gray;
   	   line-width: 2;
   	   line-opacity: 0.9;
   	}
+    
+//    polygon-fill: aqua;
+//    opacity:0.5;
+
+  
 }
 
 #impact {
@@ -38,6 +45,8 @@ Map {
   [impact >= 9276][impact < 22226]    { polygon-fill: @shade4; }
   [impact >= 22226][impact < 78573]   { polygon-fill: @shade5; }
   [impact >= 78573][impact < 159002]  {  polygon-fill: @shade6;}
+ //  image-filters:agg-stack-blur(1,1);
+
 }
 
 #impact[zoom > 10] { line-width: 1; } 

@@ -13,7 +13,7 @@
   "format": "png",
   "interactivity": {
     "layer": "impact",
-    "template_teaser": "<b>{{{NAME_2}}}, {{{STATENAME}}}</b>\n{{#Status}}\n  <span style=\"color: red\">Reported as flooded.</span>\n{{/Status}}\n<br>\nImpacted Population (Modis/AfriPop): {{{impact}}}\n<br>\nTotal Population (Local, 2001): {{{POP_2001}}}\n<br>\n",
+    "template_teaser": "<b>District {{{NAME_2}}}, {{{STATENAME}}}</b>\n{{#Status}}\n  <span style=\"color: red\">Reported as impacted.</span>\n{{/Status}}\n<br>\nPopulation in inundation zones (Modis/AfriPop): {{{impact}}}\n<br>\nTotal Population (Local, 2001): {{{POP_2001}}}\n<br>\n",
     "fields": [
       "NAME_2",
       "STATENAME",
@@ -37,8 +37,7 @@
       "Datasource": {
         "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
         "type": "shape"
-      },
-      "status": "off"
+      }
     },
     {
       "geometry": "polygon",
@@ -59,8 +58,7 @@
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "impact",
-      "status": "off"
+      "name": "impact"
     },
     {
       "geometry": "polygon",
@@ -81,8 +79,7 @@
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "impact_flood",
-      "status": "off"
+      "name": "impact_flood"
     },
     {
       "geometry": "raster",
@@ -100,7 +97,8 @@
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "flood_pretty"
+      "name": "flood_pretty",
+      "status": "off"
     }
   ],
   "scale": 1,
