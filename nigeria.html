@@ -78,27 +78,83 @@
   .map-attribution {
     bottom: 50px;
   }
+
+  .legend-title {
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+  .legend-title-part {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 70%;
+    }
+  .legend-scale ul {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .legend-scale ul li {
+    font-size: 80%;
+    list-style: none;
+    margin-left: 0;
+    line-height: 18px;
+    margin-bottom: 4px;
+    }
+  ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 16px;
+    width: 30px;
+    margin-right: 8px;
+    margin-left: 0;
+    border: 1px solid #999;
+    }
+   ul.legend-labels li img {
+    display: block;
+    float: left;
+    height: 16px;
+    width: 30px;
+    margin-right: 8px;
+    margin-left: 0;
+    border: 1px solid #999;
+    }
+  .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+    }
+  a {
+    color: #777;
+    }
 </style>
 <div id='swipe'>
     <div id='handle'>drag</div>
 </div>
+<ul id='map-ui'></ul>>
 <div id='map'></div>
 <div class="map-legends">
     <div class="map-legend">
-        <div class='legend-title'>Flood Impact in Nigeria<br/></div>
-          <div class='legend-scale'>
-            <ul class='legend-labels'>
-              <span style='background:#FFFFFF;'>____</span> None<br>
-              <span style='background:#FFFFB2;'>____</span> 1 - 2242<br>
-              <span style='background:#FECC5C;'>____</span> 2243 - 9276<br>
-              <span style='background:#FD8D3C;'>____</span> 9277 - 22226<br>
-              <span style='background:#F03B20;'>____</span> 22227 - 78573<br>
-              <span style='background:#BD0026;'>____</span> 78573 - 159002<br>
-              <img border="0" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSBgHwcaoDVyX_Y5imf-vKT6buvrflEDLiGkEyYfft1Fp-eZ-7J" alt="missing" width="32" height="15"> Reported as flooded
-            </ul>
-          </div>
+        <div class='legend-title'>Nigeria Floods, Nov 2012<br/></div>
+          <div class='legend-title-part'>Evaluation of the number of people impacted<br/></div>
+            <div class='legend-scale'>
+              <ul class='legend-labels'>
+                <li><span style='background:#FFFFFF;'></span>None <li>
+                <li><span style='background:#FFFFB2;'></span>1 - 2242<li>
+                <li><span style='background:#FECC5C;'></span>2242 - 9276<li>
+                <li><span style='background:#FD8D3C;'></span>9276 - 22226<li>
+                <li><span style='background:#F03B20;'></span>22226 - 78573<li>
+                <li><span style='background:#BD0026;'></span>78573 - 159002<li>
+                <li><img border="0" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSBgHwcaoDVyX_Y5imf-vKT6buvrflEDLiGkEyYfft1Fp-eZ-7J" alt="missing" width="32" height="15">  Reported as impacted </li>
+              </ul>
+              <div class='legend-source'>Source: Calculated with MODIS satellite and GRUMP population data</div>
+            </div>
     </div>
 </div>
+
 <script>
 
   var map = mapbox.map('map'),
