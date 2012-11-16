@@ -6,8 +6,8 @@ grid({
         85.05112231458043
     ],
     "center": [
-        0,
-        0,
+        20,
+        20,
         5
     ],
     "description": "The I2Q system and the GHSL concept are developed under the scientific coordination of Martino Pesaresi in the EC JRC ISFEREA action institutional work plan [http://jpb.jrc.cec.eu.int/]. At the date, the ISFEREA team is composed by the following permanent staff (alphabetical order): Daniele Ehrlich (remote sensing, risk analysis), Fernand Haag (image interpreter), Matina Halkia (urban and regional analysis), Thomas Kemper (remote sensing, IDP camps /slum analysis),Martino Pesaresi (action leader), Pierre Soille (image processing, remote sensing), and Luigi Zanchetta (IT system support).",
