@@ -52,19 +52,17 @@ Map {
 #impact[zoom > 10] { line-width: 1; } 
 
 
-#impact[zoom > 6][zoom <10] {
+#impact[zoom > 6][zoom <14] {
   [impact =  0]      { polygon-fill: @shade1; polygon-opacity:0; line-opacity: 0;}
   [impact >  0][impact < 100]    { polygon-fill: @shade1; polygon-opacity:0; line-opacity: 0;}
   polygon-opacity: 0.43;
   line-opacity: 0.43;
 } 
 
-#impact[zoom >=10] {
-  polygon-opacity: 0;
-  line-opacity: 0;
-} 
-
-
+#flood_pretty {
+  raster-opacity:0.95;
+  image-filters:agg-stack-blur(1,1);
+}
 
 #countries[ADMIN!='Nigeria'] {
 	polygon-fill:black;
@@ -78,9 +76,4 @@ Map {
   ::shape {
     opacity: 0;
   }
-}
-
-#flood_pretty {
-  raster-opacity:0.95;
-  image-filters:agg-stack-blur(1,1);
 }
