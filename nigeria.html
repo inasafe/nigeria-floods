@@ -134,7 +134,7 @@
 <div id='swipe'>
     <div id='handle'>drag</div>
 </div>
-<ul id='map-ui'></ul>>
+<ul id='map-ui'></ul>
 <div id='map'></div>
 <div class="map-legends">
     <div class="map-legend">
@@ -157,13 +157,10 @@
 
 <script>
 
-  var map = mapbox.map('map'),
+  var map = mapbox.map('map');
+  
   layers = document.getElementById('layers');
   map.ui.zoomer.add();
-  
-  var interaction = mapbox.interaction()
-      .map(map)
-      .auto();
 
   map.addLayer(mapbox.layer().id(['gfdrr-labs.map-kni9jms2', 'bwyss.nigeria-floods']));
   
@@ -188,13 +185,18 @@
       handle.style.left = (x - 20) + 'px';
       l_parent.style.clip = 'rect(0px ' + x + 'px 9999999px 0px)';
   }
-  
+
   // Attribute map
     map.ui.attribution.add()
           .content('<a href="http://mapbox.com/about/maps">Inasafe Sprint @ Pavia</a>');
 
   setDivide(300);
-  
+
+  mapbox.load(['bwyss.nigeria-floods'], function(data) {
+       var interaction = mapbox.interaction()
+         .map(map)
+         .auto();
+       });
 </script>
 </body>
 </html>
