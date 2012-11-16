@@ -13,7 +13,7 @@
   "format": "png",
   "interactivity": {
     "layer": "impact",
-    "template_teaser": "<b>District {{{NAME_2}}}, {{{STATENAME}}}</b>\n{{#Status}}\n  <span style=\"color: red\">Reported as impacted.</span>\n{{/Status}}\n<br>\nPopulation in inundation zones (Modis/AfriPop): {{{impact}}}\n<br>\nTotal Population (Local, 2001): {{{POP_2001}}}\n<br>\nTotal number of households (Local, 1990): {{{NO_OF__HH}}}\n<br>\nTotal Population (Local, 1990): {{{BOTH_SEXES}}}\n<br>\nTotal number of females (Local, 1990): {{{FEMALES}}}\n<br>\nTotal number of males (Local, 1990): {{{MALES}}}\n<br>",
+    "template_teaser": "<b>District: {{{NAME_2}}}, {{{STATENAME}}}</b>\n{{#Status}}\n  <span style=\"color: red\">Reported as impacted.</span>\n{{/Status}}\n<br>\nPopu in inundated zones (Modis/AfriPop): {{{impact}}}\nTotal Population (LGA, 2001): {{{POP_2001}}}",
     "fields": [
       "NAME_2",
       "STATENAME",
