@@ -12,15 +12,7 @@
 <style type='text/css'>
     body { margin:0; padding:0; font-family: "Ubuntu"; }
     #map { position:absolute; top:0; bottom:0; width:100%; }
-    #currency {
-     z-index:9999;
-     position:absolute;
-     bottom:10px;
-     right:10px;
-     font-size:36px;
-     font-weight:bold;
-    }
-     #map-ui {
+    #map-ui {
     position:absolute;
     top:10px;left:10px;
     list-style:none;
@@ -78,38 +70,159 @@
   .map-attribution {
     bottom: 50px;
   }
+
+  .legend-title {
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+  .legend-title-part {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-size: 70%;
+    }
+  .legend-scale ul {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .legend-scale ul li {
+    font-size: 80%;
+    list-style: none;
+    margin-left: 0;
+    line-height: 18px;
+    margin-bottom: 3px;
+    }
+  ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 16px;
+    width: 30px;
+    margin-right: 8px;
+    margin-left: 0;
+    border: 1px solid #999;
+    }
+   ul.legend-labels li img {
+    display: block;
+    float: left;
+    height: 16px;
+    width: 30px;
+    margin-right: 8px;
+    margin-left: 0;
+    border: 1px solid #999;
+    }
+  .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+    }
+  a {
+    color: #777;
+    text-decoration:none;
+    }
+
+  .raster .legend-title {
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+  .raster .legend-scale ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .raster .legend-scale ul li {
+    display: block;
+    float: left;
+    width: 23px;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 80%;
+    list-style: none;
+    }
+  .raster ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 23px;
+    }
+  .raster .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+    }
+  .raster a {
+    color: #777;
+    }
+
 </style>
-<div id='swipe'>
-    <div id='handle'>drag</div>
-</div>
+<ul id='map-ui'></ul>
 <div id='map'></div>
 <div class="map-legends">
     <div class="map-legend">
-        <div class='legend-title'>Flood Impact in Nigeria<br/></div>
-          <div class='legend-scale'>
-            <ul class='legend-labels'>
-              <span style='background:#FFFFFF;'>____</span> None<br>
-              <span style='background:#FFFFB2;'>____</span> 1 - 2242<br>
-              <span style='background:#FECC5C;'>____</span> 2243 - 9276<br>
-              <span style='background:#FD8D3C;'>____</span> 9277 - 22226<br>
-              <span style='background:#F03B20;'>____</span> 22227 - 78573<br>
-              <span style='background:#BD0026;'>____</span> 78573 - 159002<br>
-              <img border="0" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSBgHwcaoDVyX_Y5imf-vKT6buvrflEDLiGkEyYfft1Fp-eZ-7J" alt="missing" width="32" height="15"> Reported as flooded
-            </ul>
+        <div class='legend-title'>Nigeria Floods, Nov 2012<br/></div>
+          <div class='legend-title-part'>Evaluation of the number of people impacted<br/>
           </div>
+            <div class='legend-scale'>
+              <ul class='legend-labels'>
+                <li><span style='background:#FFFFFF;'></span>None <li>
+                <li><span style='background:#FFFFB2;'></span>1 - 2242<li>
+                <li><span style='background:#FECC5C;'></span>2242 - 9276<li>
+                <li><span style='background:#FD8D3C;'></span>9276 - 22226<li>
+                <li><span style='background:#F03B20;'></span>22226 - 78573<li>
+                <li><span style='background:#BD0026;'></span>78573 - 159002<li>
+              </ul>
+              <div class='legend-source'> Source: <a href="#link to source">Calculated with MODIS satellite imagery and GRUMP population data </a>
+              </div>
+            </div>
+       <div class='legend-title-part'>Report<br/>
+          </div>
+            <div class='legend-scale'>
+              <ul class='legend-labels'>
+                <li><span><img border="0" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSBgHwcaoDVyX_Y5imf-vKT6buvrflEDLiGkEyYfft1Fp-eZ-7J" alt="missing" width="32" height="15"></span>Reported as impacted<li>
+              </ul>
+          <div class='legend-source'></div>
+      </div>
+      <div class='raster'>
+        <div class='legend-title-part'>Number of days of flood (01/07/12 to 10/11/12) </div>
+        <div class='legend-scale'>
+          <ul class='legend-labels'>
+            <li><span style='background:rgb(255,255,255)'></span>0</li>
+            <li><span style='background:rgb(168,226,250)'></span>1</li>
+            <li><span style='background:rgb(137,216,249)'></span>2</li>
+            <li><span style='background:rgb(108,206,245)'></span>4</li>
+            <li><span style='background:rgb(79,184,232)'></span>8</li>
+            <li><span style='background:rgb(47,163,222)'></span>16</li>
+            <li><span style='background:rgb(6,146,208)'></span>24</li>
+            <li><span style='background:rgb(0,120,191)'></span>32</li>
+            <li><span style='background:rgb(40,92,165)'></span>48</li>
+            <li><span style='background:rgb(62,69,157)'></span>64</li>
+            <li><span style='background:rgb(58,45,150)'></span>100</li>
+          </ul>
+        </div>
+        <div class='legend-source'>Source: <a href="#link to source"> Calculated with MODIS satellite imagery</a></div>
+      </div>
     </div>
 </div>
+<div id='swipe'>
+    <div id='handle'>drag</div>
+</div>
+
 <script>
 
-  var map = mapbox.map('map'),
+  var map = mapbox.map('map');
+  
   layers = document.getElementById('layers');
   map.ui.zoomer.add();
-  
-  var interaction = mapbox.interaction()
-      .map(map)
-      .auto();
 
-  map.addLayer(mapbox.layer().id('bwyss.nigeria-floods', 'gfdrr-labs.map-kni9jms2').composite(false));
+  map.addLayer(mapbox.layer().id(['gfdrr-labs.map-kni9jms2', 'bwyss.nigeria-floods']));
   
   map.addLayer(mapbox.layer().id('examples.map-20v6611k').composite(false));
   map.zoom(6).center({ lat: 7.6219, lon: 6.9743 });
@@ -132,13 +245,18 @@
       handle.style.left = (x - 20) + 'px';
       l_parent.style.clip = 'rect(0px ' + x + 'px 9999999px 0px)';
   }
-  
+
   // Attribute map
     map.ui.attribution.add()
           .content('<a href="http://mapbox.com/about/maps">Inasafe Sprint @ Pavia</a>');
 
   setDivide(300);
-  
+
+  mapbox.load(['bwyss.nigeria-floods'], function(data) {
+       var interaction = mapbox.interaction()
+         .map(map)
+         .auto();
+       });
 </script>
 </body>
 </html>
