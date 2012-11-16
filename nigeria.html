@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
   <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.css' rel='stylesheet' />
-  <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-
   <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+<style type='text/css'>
     body { margin:0; padding:0; font-family: "Ubuntu"; }
     #map { position:absolute; top:0; bottom:0; width:100%; }
     #currency {
@@ -16,7 +19,7 @@
      right:10px;
      font-size:36px;
      font-weight:bold;
-   }
+    }
      #map-ui {
     position:absolute;
     top:10px;left:10px;
@@ -52,46 +55,90 @@
       border-top-color:#FFF;
       color:#FFF;
       }
-  </style>
-</head>
-<body>
-<ul id='map-ui'></ul>
-<div id='currency'>Nigeria Floods, Nov 2012</div>
+  #swipe {
+    background:#fff;
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:1000;
+    padding:10px;
+    height:30px;
+  }
+  #swipe #handle {
+    position:absolute;
+    height:20px;
+    padding:5px;
+    background:#aaa;
+    font-weight:bold;
+    border:1px solid #333;
+    cursor:pointer;
+    -webkit-user-select: none;
+  }
+  .map-attribution {
+    bottom: 50px;
+  }
+</style>
+<div id='swipe'>
+    <div id='handle'>drag</div>
+</div>
 <div id='map'></div>
 <div class="map-legends">
     <div class="map-legend">
         <div class='legend-title'>Flood Impact in Nigeria<br/></div>
           <div class='legend-scale'>
             <ul class='legend-labels'>
-              <span style='background:#FFFFFF;'>____</span>  None<br>
-              <span style='background:#FFFFB2;'>____</span>  1 - 2242<br>
-              <span style='background:#FECC5C;'>____</span>  2243 - 9276<br>
-              <span style='background:#FD8D3C;'>____</span>  9277 - 22226<br>
-              <span style='background:#F03B20;'>____</span>  22227 - 78573<br>
-              <span style='background:#BD0026;'>____</span>  78573 - 159002<br>
-              <img border="0" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSBgHwcaoDVyX_Y5imf-vKT6buvrflEDLiGkEyYfft1Fp-eZ-7J" alt="missing" width="32" height="15">
+              <span style='background:#FFFFFF;'>____</span> None<br>
+              <span style='background:#FFFFB2;'>____</span> 1 - 2242<br>
+              <span style='background:#FECC5C;'>____</span> 2243 - 9276<br>
+              <span style='background:#FD8D3C;'>____</span> 9277 - 22226<br>
+              <span style='background:#F03B20;'>____</span> 22227 - 78573<br>
+              <span style='background:#BD0026;'>____</span> 78573 - 159002<br>
+              <img border="0" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSBgHwcaoDVyX_Y5imf-vKT6buvrflEDLiGkEyYfft1Fp-eZ-7J" alt="missing" width="32" height="15"> Reported as flooded
             </ul>
           </div>
     </div>
 </div>
 <script>
 
-    mapbox.load(['bwyss.nigeria-floods', 'gfdrr-labs.map-kni9jms2'], function(data) {
-      var map = mapbox.map('map');
-      map.ui.zoomer.add();
+  var map = mapbox.map('map'),
+  layers = document.getElementById('layers');
+  map.ui.zoomer.add();
+  
+  var interaction = mapbox.interaction()
+      .map(map)
+      .auto();
 
-      map.addLayer(data[1].layer);
-      map.addLayer(data[0].layer);
-      map.zoom(6).center(data[0].center);
+  map.addLayer(mapbox.layer().id('bwyss.nigeria-floods', 'gfdrr-labs.map-kni9jms2').composite(false));
+  
+  map.addLayer(mapbox.layer().id('examples.map-20v6611k').composite(false));
+  map.zoom(6).center({ lat: 7.6219, lon: 6.9743 });
+  map.ui.attribution.add()
+      .content('<a href="http://mapbox.com/about/maps">Terms &amp; Feedback</a>');
 
-      var interaction = mapbox.interaction()
-        .map(map)
-        .auto();
+  var l_parent = map.getLayerAt(1).parent,
+      handle = document.getElementById('handle'),
+      dragging = false;
 
-      // Attribute map
-      map.ui.attribution.add()
-            .content('<a href="http://mapbox.com/about/maps">Inasafe Sprint @ Pavia</a>');
-      });
+  handle.onmousedown = function() { dragging = true; return false;}
+  document.onmouseup = function() { dragging = false; }
+  document.onmousemove = function(e) {
+      if (!dragging) return;
+      setDivide(MM.getMousePoint(e, map).x);
+  }
+
+  function setDivide(x) {
+      x = Math.max(0, Math.min(x, map.dimensions.x));
+      handle.style.left = (x - 20) + 'px';
+      l_parent.style.clip = 'rect(0px ' + x + 'px 9999999px 0px)';
+  }
+  
+  // Attribute map
+    map.ui.attribution.add()
+          .content('<a href="http://mapbox.com/about/maps">Inasafe Sprint @ Pavia</a>');
+
+  setDivide(300);
+  
 </script>
 </body>
 </html>
